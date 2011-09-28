@@ -1,7 +1,7 @@
 # encoding: UTF-8
-require "ftp_sync/version"
+require "libelule/version"
 require 'net/ftp'
-module FtpSync
+module Libelule
   class Client
     class << self
       attr_accessor :silence_log_messages

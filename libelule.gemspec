@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "ftp_sync/version"
+require "libelule/version"
 
 Gem::Specification.new do |s|
-  s.name        = "ftp_sync"
-  s.version     = FtpSync::VERSION
+  s.name        = "libelule"
+  s.version     = Libelule::VERSION
   s.authors     = ["Patrick Huesler"]
   s.email       = ["patrick.huesler@gmail.com"]
   s.homepage    = "https://github.com/phuesler/ftpsync"

@@ -1,9 +1,9 @@
 # encoding: UTF-8
 require 'test_helper'
 
-class FtpSync::ClientTest < Test::Unit::TestCase
+class Libelule::ClientTest < Test::Unit::TestCase
 
-  FTP_SOURCE_DIR = File.join("/tmp","ftp_sync_test")
+  FTP_SOURCE_DIR = File.join("/tmp","libelule_test")
   FTP_TARGET_DIR = "remote_assets"
 
   def ftp_string_for_filename(file_name)
@@ -14,7 +14,7 @@ class FtpSync::ClientTest < Test::Unit::TestCase
     "drw-r--r--    1 james     staff            6 Jan 07 03:54 #{directory_name}"
   end
 
-  FtpSync::Client.silence_log_messages = true
+  Libelule::Client.silence_log_messages = true
 
   context "one_way_sync_from_local_to_remote" do
     setup do
@@ -23,7 +23,7 @@ class FtpSync::ClientTest < Test::Unit::TestCase
       @ftp_client_test_double = stub_everything('fake_ftp_client')
       @ftp_fake_client_class = stub("FakeFTPClient", :new => @ftp_client_test_double)
 
-      @ftp = FtpSync::Client.new("ftp.test.host", "ftpuser", "ftppassword")
+      @ftp = Libelule::Client.new("ftp.test.host", "ftpuser", "ftppassword")
       @ftp.ftp_client = @ftp_fake_client_class
     end
 
@@ -74,7 +74,7 @@ class FtpSync::ClientTest < Test::Unit::TestCase
       @ftp_client_test_double = stub_everything('fake_ftp_client')
       @ftp_fake_client_class = stub("FakeFTPClient", :new => @ftp_client_test_double)
 
-      @ftp = FtpSync::Client.new("ftp.test.host", "ftpuser", "ftppassword")
+      @ftp = Libelule::Client.new("ftp.test.host", "ftpuser", "ftppassword")
       @ftp.ftp_client = @ftp_fake_client_class
 
       @ftp_client_test_double.stubs(:ls).multiple_yields(
@@ -127,7 +127,7 @@ class FtpSync::ClientTest < Test::Unit::TestCase
       @ftp_client_test_double = stub_everything('fake_ftp_client')
       @ftp_fake_client_class = stub("FakeFTPClient", :new => @ftp_client_test_double)
 
-      @ftp = FtpSync::Client.new("ftp.test.host", "ftpuser", "ftppassword")
+      @ftp = Libelule::Client.new("ftp.test.host", "ftpuser", "ftppassword")
       @ftp.ftp_client = @ftp_fake_client_class
 
       @ftp_client_test_double.stubs(:ls).multiple_yields(

@@ -4,4 +4,4 @@ require "rubygems"
 require 'test/unit'
 require 'mocha'
 require 'shoulda-context'
-require 'ftp_sync'
+require 'libelule'

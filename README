@@ -1,5 +1,5 @@
 require 'yaml'
 
-ftp_sync = FtpSynbc::Client.new('hostname', 'username','password')
-ftp_sync.one_way_sync_from_local_to_remote('target_dir','base dir')
+libelule = FtpSynbc::Client.new('hostname', 'username','password')
+libelule.one_way_sync_from_local_to_remote('target_dir','base dir')
 
