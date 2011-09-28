@@ -7,18 +7,14 @@ Gem::Specification.new do |s|
   s.version     = FtpSync::VERSION
   s.authors     = ["Patrick Huesler"]
   s.email       = ["patrick.huesler@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
-
-  s.rubyforge_project = "ftp_sync"
-
+  s.homepage    = "https://github.com/phuesler/ftpsync"
+  s.summary     = "Syncing files over ftp/sftp"
+  s.description = ""
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_development_dependency "rake"
+  s.add_development_dependency "shoulda-context"
+  s.add_development_dependency "mocha"
 end
