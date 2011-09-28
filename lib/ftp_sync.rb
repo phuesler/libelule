@@ -2,9 +2,11 @@
 require "ftp_sync/version"
 require 'net/ftp'
 module FtpSync
-  class FTPSync
-    @@silence_log_messages = false
-    cattr_accessor :silence_log_messages
+  class Client
+    class << self
+      attr_accessor :silence_log_messages
+      silence_log_messages = true
+    end
 
     attr_accessor :ftp_client
 
@@ -178,7 +180,7 @@ module FtpSync
     end
 
     def log(message)
-      puts message unless @@silence_log_messages
+      puts message unless self.class.silence_log_messages
     end
   end
 end
